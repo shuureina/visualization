@@ -1,0 +1,186 @@
+@charset 'utf8';
+$tc:#080fe1;
+*{
+    margin:0;
+    padding:0;
+}
+.col-lg-4,.col-md-4,.col-sm-6,.col-lg-6,.col-md-6{
+   padding:0 5px;
+}
+body{
+    background: #0a1d69;
+    font-size: 12px;
+    color:#fff;
+    opacity: 0.9;
+}
+.head-title{
+    padding-top:20px;
+    color:#1bebf6;
+    font-size: 26px;
+    font-weight: bolder;
+}
+.borders{
+    border:1px solid #1c4764;
+    box-sizing: border-box;
+}
+
+.title-tc{
+   padding:5px 10px; 
+    background: $tc;
+    display: inline-block;
+   opacity: 0.8;
+   border-radius: 5px;
+   font-size: 14px;
+
+}
+.t-blue{
+    color:#38b3c8;
+}
+
+.total-table{
+      td{
+          padding:5px 9px;
+      }
+}
+
+.v-content{
+    .v-content-group{
+        margin:5px 0;
+        height: 300px;
+        .vf-group-item{
+            height: 300px;
+            .borders{
+                height: 100%;
+            }
+            &:nth-of-type(1){
+                padding-left:0;
+            }
+            &:nth-of-type(2){
+                padding-right: 0;
+            }
+        }
+        .fault-item{
+            &.fault-num{
+                display: flex;
+                justify-content:space-between;
+                margin-bottom: 10px;
+                .item{
+                    padding:5px;
+                    width: 90px;
+
+                    h6{
+                        margin:0;
+                    }
+                    p{
+                        font-size: 24px;
+                        margin:0;
+                        text-indent:12px;
+                        &.item-area{
+                            color:#69a26d;
+                        }
+                        &.item-hdanger{
+                            color:#c6a976;
+                        }
+                        &.item-mold{
+                            color:#38b3c8;
+                        }
+                        &.item-year{
+                            color:#846494;
+                        }
+                    }
+                }
+            }
+            &.fault-content{
+                .content{
+                    padding:10px;
+                    display: flex;
+                    position: relative;
+                    .circle-text{
+                        position: absolute;
+                        left:20px;
+                        bottom: 20px;
+                    }
+                    .fault-table{
+                        box-sizing: border-box;
+                        margin-top:10px;
+                       tr{
+                            border: 1px solid rgba(172, 170, 170,.3);
+                        }
+                        td{
+                            padding:2px;
+                            // border-right: 1px solid #fff;
+                        }
+                    }
+                }
+            }
+        }
+        .chart-content{
+            padding-top:10px;
+            width: 100%;
+            height:90%;
+        }
+        &.industries-content{
+            display: flex;
+            .borders{
+                flex:1;
+                margin-right:5px;
+                &:nth-of-type(4){
+                      margin-right:0;
+                }
+                .id-item{
+                    height: 194px;
+                }
+                p{
+                    text-align: center;
+                    .t-blue{
+                    display: block;
+                    font-size: 18px;
+                    font-weight: bolder;
+                    }
+                }
+            }
+            .industries{
+                position: relative;
+                &:hover{
+                    span{
+                        display: none;
+                    }
+                }
+                span{
+                    position: absolute;
+                    top:50%;
+                    left: 50%;
+                    margin-left:-20px;
+                    margin-top:-68px;
+                    font-size: 20px;
+                }
+                .indChart{
+                    height: 300px;
+                }
+                
+            }
+        }
+        .equipment-con{
+            &:first-of-type{
+                margin-bottom: 5px;
+            }
+            .equipment{
+                padding-top:10px;
+               height: 158px;
+            }
+            .fault-item{
+                padding:10px 10px 0;
+                .item{
+                   width: 65px;
+                    span{
+                        padding-left:5px;
+                        display: inline-block;
+                        font-size: 20px;
+                      
+                    }
+                }
+            }
+        }
+    
+    }
+}

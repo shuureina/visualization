@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>大数据可视化-echarts</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/index.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="head-title text-center">
+            风险隐患走势
+        </h1>
+        <div class="v-content row">
+            <div class="col-lg-4 col-md-4 col-sm-6">
+            <div class="v-content-group row">
+                        <div class="vf-group-item col-lg-6 col-md-6 col-sm-6">
+                            <div class="borders">
+                                <div class="title title-tc">企业数量区域统计</div>
+                                <table class="total-table">
+                                    <thead>
+                                        <tr>
+                                            <td>排名</td>
+                                            <td>企业名称</td>
+                                            <td>数量统计</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="t-blue">
+                                            <td>1</td>
+                                            <td>FDBY</td>
+                                            <td>878</td>
+                                        </tr>
+                                        <tr class="t-blue">
+                                            <td>2</td>
+                                            <td>ZD</td>
+                                            <td>649</td>
+                                        </tr>
+                                        <tr class="t-blue">
+                                            <td>3</td>
+                                            <td>CZ</td>
+                                            <td>605</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>GED</td>
+                                            <td>395</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>OPJOG</td>
+                                            <td>345</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td>SFGB</td>
+                                            <td>289</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td>EHB</td>
+                                            <td>263</td>
+                                        </tr>
+                                        <tr>
+                                            <td>8</td>
+                                            <td>CC</td>
+                                            <td>257</td>
+                                        </tr>
+                                        <tr>
+                                            <td>9</td>
+                                            <td>EHNH</td>
+                                            <td>254</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="vf-group-item col-lg-6 col-md-6 col-sm-6">
+                            <div class="borders">
+                                <div class="title title-tc">本年度数量统计(较上年)</div>
+                                <table class="total-table">
+                                        <thead>
+                                            <tr>
+                                                <td>排名</td>
+                                                <td>企业名称</td>
+                                                <td>数量统计</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="t-blue">
+                                                <td>1</td>
+                                                <td>FDBY</td>
+                                                <td>21.0%</td>
+                                            </tr>
+                                            <tr class="t-blue">
+                                                <td>2</td>
+                                                <td>ZD</td>
+                                                <td>16.0%</td>
+                                            </tr>
+                                            <tr class="t-blue">
+                                                <td>3</td>
+                                                <td>CZ</td>
+                                                <td>16.8%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>4</td>
+                                                <td>GED</td>
+                                                <td>10.2%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>OPJOG</td>
+                                                <td>8.92%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>SFGB</td>
+                                                <td>7.61%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>EHB</td>
+                                                <td>7.43%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>CC</td>
+                                                <td>7.20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>EHNH</td>
+                                                <td>7.09%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="v-content-group">
+                        <div class="fault-item fault-num">
+                            <div class="item borders">
+                                <h6>区域统计</h6>
+                                <p class="item-area">3519</p>
+                            </div>
+                            <div class="item borders">
+                                <h6>隐患统计</h6>
+                                <p class="item-hdanger">681</p>
+                            </div>
+                            <div class="item borders">
+                                <h6>类型统计</h6>
+                                <p class="item-mold">106</p>
+                            </div>
+                            <div class="item borders">
+                                <h6>年度数量统计</h6>
+                                <p class="item-year">89852</p>
+                            </div>
+                        </div>
+                        <div class="fault-item fault-content borders">
+                                <div class="title title-tc">企业数量区域统计</div>
+                                <div class="content">
+                                    <canvas id="mycircle" width="120" height="180"></canvas>
+                                    <div class="circle-text">
+                                        <p>84459</p>
+                                        <span>统计数量</span>
+                                    </div>
+                                    <table class="fault-table">
+                                        <thead>
+                                            <tr>
+                                                <td>名称</td>
+                                                <td>一类</td>
+                                                <td>二类</td>
+                                                <td>三类</td>
+                                                <td>四类</td>
+                                                <td>五类</td>
+                                                <td>合计</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>陈村</td>
+                                                <td>3606</td>
+                                                <td>1105</td>
+                                                <td>21526</td>
+                                                <td>13611</td>
+                                                <td>4445</td>
+                                                <td>44293</td>
+                                            </tr>
+                                            <tr>
+                                                <td>均安</td>
+                                                <td>172</td>
+                                                <td>65</td>
+                                                <td>812</td>
+                                                <td>606</td>
+                                                <td>380</td>
+                                                <td>2035</td>
+                                            </tr>
+                                            <tr>
+                                                <td>杏园</td>
+                                                <td>1911</td>
+                                                <td>415</td>
+                                                <td>5806</td>
+                                                <td>3637</td>
+                                                <td>1121</td>
+                                                <td>12890</td>
+                                            </tr>
+                                            <tr>
+                                                <td>北浅</td>
+                                                <td>1191</td>
+                                                <td>537</td>
+                                                <td>13430</td>
+                                                <td>8358</td>
+                                                <td>2740</td>
+                                                <td>26265</td>
+                                            </tr>
+                                            <tr>
+                                                <td>乐从</td>
+                                                <td>157</td>
+                                                <td>37</td>
+                                                <td>560</td>
+                                                <td>267</td>
+                                                <td>73</td>
+                                                <td>1094</td>
+                                            </tr>
+                                            <tr>
+                                                <td>龙江</td>
+                                                <td>174</td>
+                                                <td>51</td>
+                                                <td>913</td>
+                                                <td>740</td>
+                                                <td>121</td>
+                                                <td>1999</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                <div class="v-content-group borders current-year-wrap">
+                        <div class="title title-tc">本年度区域统计</div>
+                    <div id="currentYear" class="chart-content"></div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="v-content-group industries-content">
+                     <div class="borders">
+                         <div id="primaryIndustry" class="id-item"></div>
+                         <div class="content">
+                             <p>
+                                 <span  class="t-blue">35974</span>第一产业
+                            </p>
+                             <p>
+                                 <span  class="t-blue">3196</span>较上一年
+                            </p>
+                         </div>
+                     </div>
+                     <div class="borders">
+                         <div id="secondaryIndustry" class="id-item"></div>
+                         <div class="content">
+                             <p>
+                                 <span  class="t-blue">59875</span>第二产业
+                            </p>
+                             <p>
+                                 <span  class="t-blue">5681</span>较上一年
+                            </p>
+                         </div>
+                     </div>
+                     <div class="borders">
+                         <div id="tertiaryIndustry" class="id-item"></div>
+                        <div class="content">
+                             <p>
+                                 <span  class="t-blue">18652</span>第三产业
+                            </p>
+                             <p>
+                                 <span  class="t-blue">1874</span>较上一年
+                            </p>
+                         </div>
+                     </div>
+                     <div class="borders industries">
+                         <div id="industries" class="indChart" ></div>
+                         <span>占比</span>
+                     </div>
+                    </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="v-content-group">
+                        <div class="borders equipment-con">
+                            <div class="title title-tc">设备故障维修统计</div>
+                            <div id="equipment" class="equipment"></div>
+                        </div>
+                        <div class="borders equipment-con">
+                             <div class="title title-tc">企业设备隐患整改</div>
+                             <div class="fault-item fault-num">
+                                    <div class="item borders">
+                                        <h6 class="t-blue">一类</h6>
+                                        <span>3246</span>
+                                    </div>
+                                    <div class="item borders">
+                                        <h6 class="t-blue">二类</h6>
+                                        <span>5458</span>
+                                    </div>
+                                    <div class="item borders">
+                                        <h6 class="t-blue">三类</h6>
+                                        <span>3747</sapn>
+                                    </div>
+                                    <div class="item borders">
+                                        <h6 class="t-blue">四类</h6>
+                                        <span>1689</span>
+                                    </div>
+                                     <div class="item borders">
+                                        <h6 class="t-blue">五类</h6>
+                                        <span>3451</span>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="v-content-group borders">
+                         <div class="title title-tc">当月隐患统计(较上月)</div>
+                         <div id="hiddenDanger" class="chart-content"></div>
+                    </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="v-content-group borders">
+                      <div class="title title-tc">企业风险隐患级别</div>
+                      <div id="riskLevel" class="chart-content"></div>
+                    </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="v-content-group borders">
+                         <div class="title title-tc">风险隐患企业类型统计</div>
+                         <div id="companyType" class="chart-content"></div>
+                    </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+                    <div class="v-content-group borders">
+                        <div class="title title-tc">企业风险类型统计</div>
+                        <div id="riskType" class="chart-content"></div>
+                    </div>
+            </div>
+        </div>
+       
+    </div>
+</body>
+<script src="../node_modules/echarts/dist/echarts.min.js"></script>
+<script src="./js/index.js"></script>
+
+</html>
